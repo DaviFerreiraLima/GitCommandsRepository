@@ -1,0 +1,90 @@
+# Three states of Git
+
+1. Working directory
+2. Staging area - pre-commit holding area
+3. Commit - Git Repository
+
+Untracked file
+	Is just a file in our working 	directory that hasn't been added to 	git yet.
+
+Staging
+	Means "Changes to be commited", but it's not commited yet.
+
+Configuration
+	git config --global user.name ""
+	git config --global user.email ""
+
+command util
+	git config --global --list
+
+Initialize one repository
+	git init 
+	git remote add origin git@github.com:TaylorHudson/git-course.git
+
+
+# Steps to push
+
+git commit -am "MESSAGE" --> adds files to state of staging and create one commit.
+
+1. git add .
+2. git commit -m "MESSAGE"
+3. git pull origin BRANCH_NAME
+4. git push origin BRANCH_NAME
+
+
+# Command to send one file from staging area to unstage
+	git reset HEAD <file> or git restore --staged <file>
+
+
+# Alias
+vim ~/.gitconfig
+
+
+# Command to create noexisting commands in Git
+git config --global alias.commandName "log --all --graph --decorate --oneline" 
+( this command put in the screen all the logs with a little organizing)
+	
+	
+# Rename file
+git mv <file> <new_name>
+
+# Move file
+git mv <file> <new-directory>
+
+# Delete file
+	if the file is untracked:
+		rm <file>
+	else:
+		git rm <file>
+
+# Creating and switching to branch 'staging'
+git checkout -b staging
+
+# Switching to branch 'new_feature'
+git checkout new_feature
+
+
+
+# Delete branch 'branch_example'
+git branch -d branch_example
+
+# Rename branch name
+git branch -m <old_name> <new_name>
+
+
+# Show all created branch
+git branch
+
+# Show the difference between the working area and the staging area
+git diff
+
+# Show the difference in one file
+git diff -- <file>
+
+# Merge
+(master) git merge <branch> -m "MESSAGE"
+
+	# Show the history of the branch
+		git log --all --graph
+
+
