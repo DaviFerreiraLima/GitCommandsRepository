@@ -119,5 +119,7 @@ git diff -- <file>
 	git stash drop( a mix of apply and drop functions)
 	git stash list
 	git stash show stash@{index}( show the respective file with the 
+	git stash clear( clear the stashed items)
+	git stash branch <new branch name>( send stashes to another branch)
 index order}
 	
