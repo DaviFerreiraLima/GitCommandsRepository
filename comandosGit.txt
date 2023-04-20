@@ -10,14 +10,17 @@ Untracked file
 Staging
 	Means "Changes to be commited", but it's not commited yet.
 
-Configuration
+Configuration:
+
 	git config --global user.name ""
 	git config --global user.email ""
 
-command util
+command list global items:
+
 	git config --global --list
 
-Initialize one repository
+Initialize one repository:
+
 	git init 
 	git remote add origin git@github.com:TaylorHudson/git-course.git
 
@@ -30,6 +33,7 @@ git commit -am "MESSAGE" --> adds files to state of staging and create one commi
 2. git commit -m "MESSAGE"
 3. git pull origin BRANCH_NAME
 4. git push origin BRANCH_NAME
+5. git fetch origin BRANCH_NAME ( não altera o estado
 
 
 # Command to send one file from staging area to unstage
@@ -41,6 +45,8 @@ vim ~/.gitconfig
 
 
 # Command to create noexisting commands in Git
+
+
 git config --global alias.commandName "log --all --graph --decorate --oneline" 
 ( this command put in the screen all the logs with a little organizing)
 	
@@ -78,13 +84,40 @@ git branch
 # Show the difference between the working area and the staging area
 git diff
 
+#Show the difference between the working area and the  
+commited area( repository)
+git diff HEAD
+
+#Show the difference between the staged area and the commited area(repository)
+git diff --staged HEAD
+
+#Show the difference between two commits
+
+git diff COMMITCODE  COMMITCODE2
+
 # Show the difference in one file
 git diff -- <file>
 
 # Merge
-(master) git merge <branch> -m "MESSAGE"
+(master)   git merge <branch> -m "MESSAGE"
+	   
+		git merge <branch> --no-ff
 
 	# Show the history of the branch
 		git log --all --graph
 
 
+#git rebase 
+	git rebase <branch>
+	git rebase --abort
+
+#git stash
+	git stash 
+	git stash -u ( include untracked files)
+	git stash apply(bring back the  stash)
+	git stash drop( delete the last stash)
+	git stash drop( a mix of apply and drop functions)
+	git stash list
+	git stash show stash@{index}( show the respective file with the 
+index order}
+	
